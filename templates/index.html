@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub NVD Scanner</title>
+</head>
+<body>
+    <h2>Scan Your GitHub Repo for Vulnerabilities</h2>
+    <form method="POST">
+        <input type="text" name="repo_url" placeholder="Enter GitHub URL" required />
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if result %}
+        <h3>Scan Results:</h3>
+        <pre>{{ result | tojson(indent=2) }}</pre>
+    {% endif %}
+</body>
+</html>
